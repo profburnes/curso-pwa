@@ -1,0 +1,40 @@
+{
+    "short_name": "Deadpool",
+    "name": "Deadpool",
+    "icons": [
+      {
+        "src": "imagens/icon-128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "imagens/icon-256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
+        "src": "imagens/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "screenshots": [
+        {
+        "src": "imagens/tela.png",
+        "sizes": "320x320",
+        "type": "image/png",
+        "form_factor": "wide",
+        "label": "Deadpool"
+        }
+    ],
+    "related_applications": [
+      {
+      "platform": "play",
+      "id": "com.deadpool"
+      }
+    ],
+    "start_url": "index.html?pwa=true",
+    "background_color": "#F00",
+    "display": "standalone",
+    "theme_color": "#F00"
+  }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadpool PWA</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="imagens/icon-128.png">
+
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <div class="container">
+        <img src="imagens/logo.png" alt="Deadpool" title="Deadpool">
+        <img src="imagens/dead.png" alt="Deadpool" title="Deadpool">
+        <p>
+            <a href="https://www.disney.com.br/filmes/deadpool-&-wolverine" title="Filme do Deadpool" target="_blank"
+                class="btn">
+                Filme do Deadpool
+            </a>
+        </p>
+        <p>
+            <a href="sobre.html" title="Sobre o Filme do Deadpool" class="btn">
+                Sobre o Filme
+            </a>
+        </p>
+        <p>
+            <a href="curso.zip" title="Arquivos do Deadpool" class="btn">
+                Download Arquivos
+            </a>
+        </p>
+    </div>
+    <div class="overlay">
+        <p><strong>Deseja Instalar Este Aplicativo?</strong></p>
+        <br>
+        <p>
+            <button type="button" id="btnAdd" class="btn">Sim</button>
+            <button type="button" id="btnCancel" class="btn">Não</button>
+        </p>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register("sw.js", {
+                scope: '/curso/'
+            })
+                .then(function (register) {
+
+                    //verifica, pode-se fazer algo caso esteja em algum desses estados
+                    if (register.installing)
+                        console.log('Service Worker instalando com sucesso em ' + register.scope);
+                    else if (register.waiting)
+                        console.log('Service Worker waiting em ' + register.scope);
+                    else if (register.active)
+                        console.log('Service Worker ativo em ' + register.scope);
+
+                }).catch(function (error) {
+
+                    //se houver falha vc pode avisar, enviar o erro para uma URL, gerar log
+                    console.log('Falha ao registrar Service Worker ' + error);
+
+                });
+        }
+
+        
+    </script>
+</body>
+
+</html>
